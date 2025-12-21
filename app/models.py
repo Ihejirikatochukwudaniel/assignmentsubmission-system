@@ -6,6 +6,7 @@ class Student(Base):
     __tablename__ = 'students'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(128), unique=True, index=True, nullable=False)
+    hashed_password = Column(String(256), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     assignments = relationship('Assignment', back_populates='student')
 
@@ -13,6 +14,7 @@ class Teacher(Base):
     __tablename__ = 'teachers'
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(128), unique=True, index=True, nullable=False)
+    hashed_password = Column(String(256), nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     comments = relationship('Comment', back_populates='teacher')
 

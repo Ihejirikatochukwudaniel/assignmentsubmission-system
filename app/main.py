@@ -16,4 +16,4 @@ app.mount('/uploads', StaticFiles(directory=str(BASE_DIR / UPLOAD_DIR)), name='u
 
 @app.get('/')
 def root():
-    return {"message": "Assignment Submission System API"}
+    return {"message": "Assignment Submission System API - Use /students/register, /teachers/register for auth"}
